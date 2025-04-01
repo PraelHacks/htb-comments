@@ -136,7 +136,7 @@ By default, `tcpdump` tries to resolve IP addresses and ports into hostnames and
 
 ## Recommendations
 
-- Disable Name Resolution  using the `-nn` flag to avoid DNS and service lookups:
+- Update the command in the materials to disable Name Resolution  using the `-nn` flag to avoid DNS and service lookups:
   ```bash
   sudo tcpdump -i ens224 -nn
   ```
