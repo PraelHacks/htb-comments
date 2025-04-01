@@ -108,7 +108,7 @@ Even if we decide not to change anything, having this information is helpful in 
 
 ## Issue #2: Tcpdump Output not showing packets
 
-In the same section as Issue #1, learners are unable to replicate capturing network traffic using tcpdump. O
+In the same section as Issue #1, learners are unable to replicate capturing network traffic using tcpdump. 
 
 ![Alt text](./images/tcpdump-example.png?raw=true "Hack The Box Tcpdump Screenshot")
 
