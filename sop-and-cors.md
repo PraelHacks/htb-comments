@@ -40,8 +40,14 @@ Showing learners exactly where to look for these tokens in HTTP requests and res
 
 In relation to number 2, having an idea of how CSRF tokens are implemented will help learners better understand if they have been implemented as well as if they are implemented properly. We can add information such as: 
 
-There are several ways to implement token based mitigation and as long as it is properly implemented, they will prevent CSRF attacks.  
+When implementing CSRF tokens to protect sensitive actions, there are several ways to generate and verify tokens. As long as they are properly implemented and validated, they will effectively block CSRF attacks.  
+
+### Synchronizer Token Pattern (Server-Side Token)
+
+For applications that store session information, a common approach is the Synchronizer Token Pattern. In this pattern the server creates a random, unique token as soon as the user logs in or whenever they load a page that requires protection. This token is specific to the user’s session data and is stored on the server. 
+
+Whenever the application renders an HTML form for state-changing actions (for example, updating account details), it places the CSRF token into a hidden input field. Once the user submits the form, the token is sent alongside the request, and the server compares it to the token stored in the session. If they match, the request is accepted. If not, it is rejected as a probable CSRF attempt.
 
 ![Alt text](./images/synchronizer_token.png?raw=true "Synchronizer Token diagram")
 
-
+Some implementations generate a single token per session, which remains valid until the session ends. Other implementations rotate tokens more often, such as on every form load or request. Each approach has its own pros and cons. Per session tokens creates a longer window in which an attacker could exploit a stolen token. While a more frequent rotation of tokens can complicate the application's usability, such as if the user tries to revisit a page with an invalid token via the browser’s back button.
