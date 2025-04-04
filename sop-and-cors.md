@@ -2,6 +2,7 @@
 
 ## Comment #1: Adding diagrams and images to help explain the attack. 
 
+To help enhance the learning experience of learners, we can add diagrams that help visualize each step of the process.  
 For example, in [Senior Web Penetration Tester learning path -> Advanced XSS and CSRF Exploitation module -> Same-Origin Policy & CORS section](https://academy.hackthebox.com/module/235/section/2655), it starts with explaining the CSRF attacks.
 
 ```
@@ -13,13 +14,14 @@ As an example, consider the following scenario. The victim is an administrator o
 Although we will be creating the CSRF payloads manually in this module, there are tools that we can utilize for automatic payload generation, for instance the CSRF PoC generator here.
 ```
 
+We can add a diagram like so to aid students:
+
 ![Alt text](./images/csrf.png?raw=true "CSRF diagram")
 
-I believe it would help enhance the learning experience if we also add diagrams that help visualize each step of the process.  
 
 ## Comment #2: Add more information on how to identify if CSRF protections are in place 
 
-In the same page, there is a section dedicated to CSRF protections. Among these, it talks about CSRF Tokens: 
+In the same section, there is a brief overview of CSRF tokens as a key defense mechanism. 
 
 ```
 CSRF Tokens
@@ -28,8 +30,12 @@ CSRF Tokens are unique and random values that must be included in requests perfo
 In our above example, the web application would only accept user promotion requests containing the username in the user GET parameter and the CSRF token in the csrf_token GET parameter, typically a hidden value in the HTML form. Since the CSRF token is a random value, the attacker cannot know the correct value, and thus, he is only able to construct a cross-origin request with an invalid CSRF token. If the web application checks the CSRF token correctly, the request will be rejected, so the attacker user account is not promoted to administrator privileges.
 ```
 
-It would help learners to identify if these features are impleted by showing examples of them such as: 
+Showing learners exactly where to look for these tokens in HTTP requests and responses would help them spot whether a site has implemented any protection. Including screenshots like the following will reinforce how to locate and verify CSRF tokens:
 
 ![Alt text](./images/csrf_tokens.png?raw=true "CSRF token")
 
 ![Alt text](./images/csrf_tokens2.png?raw=true "CSRF token2")
+
+## Comment #3: CSRF Token Implementations
+
+In relation to number 2, having an idea of how CSRF tokens are implemented will help learners better understand if they have been implemented as well as if they are implemented properly. 
