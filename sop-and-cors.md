@@ -51,3 +51,7 @@ Whenever the application renders an HTML form for state-changing actions (for ex
 ![Alt text](./images/synchronizer_token.png?raw=true "Synchronizer Token diagram")
 
 Some implementations generate a single token per session, which remains valid until the session ends. Other implementations rotate tokens more often, such as on every form load or request. Each approach has its own pros and cons. Per session tokens creates a longer window in which an attacker could exploit a stolen token. While a more frequent rotation of tokens can complicate the application's usability, such as if the user tries to revisit a page with an invalid token via the browser’s back button.
+
+### Double Submit Pattern
+
+TBD
