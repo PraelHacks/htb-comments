@@ -38,4 +38,10 @@ Showing learners exactly where to look for these tokens in HTTP requests and res
 
 ## Comment #3: CSRF Token Implementations
 
-In relation to number 2, having an idea of how CSRF tokens are implemented will help learners better understand if they have been implemented as well as if they are implemented properly. 
+In relation to number 2, having an idea of how CSRF tokens are implemented will help learners better understand if they have been implemented as well as if they are implemented properly. We can add information such as: 
+
+There are several ways to implement token based mitigation and as long as it is properly implemented, they will prevent CSRF attacks.  
+
+![Alt text](./images/synchronizer_token.png?raw=true "Synchronizer Token diagram")
+
+
